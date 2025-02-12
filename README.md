@@ -15,4 +15,4 @@ Este é o meu site pessoal, onde compartilho informações sobre mim, meu portf�
 - JavaScript
 
  🌍 Acesse o site:
-🔗 [Clique aqui para acessar](bruno-modesto01.github.io)
+🔗 [Clique aqui para acessar](bruno-modesto01.github.io/Sitepessoal.html/)
