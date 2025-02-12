@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Site Pessoal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0A192F;
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #112240;
+            padding: 20px;
+        }
+        section {
+            margin: 20px;
+            padding: 20px;
+            background-color: #1C2B3A;
+            border-radius: 10px;
+            transition: transform 0.3s, filter 0.3s;
+        }
+        section:hover {
+            transform: scale(1.02);
+        }
+        .blurred {
+            filter: blur(2px);
+        }
+        h2 {
+            transition: transform 0.3s ease-in-out;
+        }
+        section:hover h2 {
+            transform: scale(1.2);
+        }
+        a {
+            color: #64FFDA;
+            text-decoration: none;
+        }
+        .gif {
+            width: 100%;
+            max-width: 400px;
+            margin-top: 20px;
+        }
+        .formulario input, .formulario textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: none;
+            border-radius: 5px;
+        }
+        .formulario button {
+            background-color: #64FFDA;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .formulario button:hover {
+            background-color: #52e0c4;
+        }
+        .rocket {
+            display: none;
+            font-size: 30px;
+            margin-top: 10px;
+            animation: launch 1s ease-out;
+        }
+        @keyframes launch {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-50px); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bruno Henrique</h1>
+        <p>Seja bem vindo(a) ao meu site pessoal!</p>
+    </header>
+    
+    <section onmouseover="destacar(this)" onmouseout="restaurar()">
+        <h2>Sobre Mim</h2>
+        <p>Sou um profissional versátil, com experiência em diversas áreas, incluindo tecnologia da informação, segurança e gestão. Ao longo da minha trajetória, desempenhei funções como conexão de redes com e sem fio, instalação de programas, manutenção de redes, recebimento e distribuição de materiais, controle de estoque, treinamentos de jovens, controle de distúrbios, segurança de autoridades, segurança pública e patrimonial, entre outras.
+
+            Atualmente, sou tecnólogo em Análise e Desenvolvimento de Sistemas, aprofundando meus conhecimentos em desenvolvimento web, análise de dados e programação. Possuo certificações em diversas tecnologias, como HTML, CSS, JavaScript, Python, SQL, React e Power BI, além de experiência com metodologias ágeis e versionamento de código.
+            
+            Minhas principais habilidades incluem liderança, trabalho em equipe, tomada de decisões, boa comunicação, inteligência emocional e raciocínio lógico. Com essa combinação de conhecimentos técnicos e habilidades interpessoais, busco sempre soluções eficientes e inovadoras para desafios do dia a dia.
+            
+            Estou em constante aprendizado e sempre aberto a novas oportunidades para crescer profissionalmente e contribuir com meu conhecimento.</p>
+    </section>
+    
+    <section onmouseover="destacar(this)" onmouseout="restaurar()">
+        <h2>Portfólio</h2>
+        <p>Em breve aqui estarão meus projetos.</p>
+    </section>
+    
+    <section onmouseover="destacar(this)" onmouseout="restaurar()">
+        <h2>Currículo</h2>
+        <a href="Curriculo Bruno Henrique.pdf" download>Baixar Currículo</a>
+    </section>
+    
+    <section onmouseover="destacar(this)" onmouseout="restaurar()">
+        <h2>Contato</h2>
+        <form class="formulario" action="https://formsubmit.co/bruno.viips01@gmail.com" method="POST">
+            <input type="text" name="name" placeholder="Seu Nome" required>
+            <input type="email" name="email" placeholder="Seu Email" required>
+            <textarea name="message" placeholder="Sua Mensagem" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+        
+        </form>
+        <p id="mensagem-confirmacao" style="display: none; color: #64FFDA;">Mensagem enviada com sucesso!</p>
+        <div id="foguete" class="rocket">🚀</div>
+    </section>
+    
+    <section onmouseover="destacar(this)" onmouseout="restaurar()">
+        <h2>Redes Sociais</h2>
+        <a href="https://www.linkedin.com/in/bruno-h-040373106/">LinkedIn</a> | 
+        <a href="https://github.com/Bruno-Modesto01">GitHub</a>  
+        
+    </section>
+    
+    <script>
+        function enviarMensagem(event) {
+            event.preventDefault();
+            document.getElementById('mensagem-confirmacao').style.display = 'block';
+            let foguete = document.getElementById('foguete');
+            foguete.style.display = 'block';
+            setTimeout(() => {
+                foguete.style.display = 'none';
+                document.getElementById('mensagem-confirmacao').style.display = 'none';
+            }, 1000);
+            return false;
+        }
+        
+        function destacar(elemento) {
+            document.querySelectorAll('section').forEach(sec => {
+                if (sec !== elemento) {
+                    sec.classList.add('blurred');
+                }
+            });
+        }
+        
+        function restaurar() {
+            document.querySelectorAll('section').forEach(sec => {
+                sec.classList.remove('blurred');
+            });
+        }
+    </script>
+</body>
+</html>
