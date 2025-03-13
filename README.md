@@ -12,7 +12,6 @@ Este é o meu site pessoal, onde compartilho informações sobre mim, meu portf�
  🎨 Tecnologias Usadas:
 - HTML5
 - CSS3
-- JavaScript
 
  🌍 Acesse o site:
 🔗 [Clique aqui para acessar](https://bruno-modesto01.github.io/Meu_site_pessoal/)
