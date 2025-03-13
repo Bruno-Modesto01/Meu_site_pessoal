@@ -3,54 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Site Pessoal</title>
+    <title>Bruno Modesto Dev</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             background-color: #0A192F;
-            color: white;
+            color: rgb(255, 255, 255);
             text-align: center;
             margin: 0;
             padding: 0;
         }
-        header {
+        .navbar {
+            display: flex;
+            justify-content: center;
             background-color: #112240;
-            padding: 20px;
+            padding: 15px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
         }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+        }
+        .navbar a:hover {
+            background-color: #13b38d;
+            border-radius: 5px;
+        }
+        h1 {
+            color: #fcfffe;
+            margin-bottom: 0px;} 
+        .titulo {
+    color: #13b38d; 
+    margin-top: 0;
+    margin-bottom: 50px;
+}
+
+        .hero img {
+            position: absolute; 
+            top: 60%;
+            left: 70%;
+            transform: translate(-50%, -50%); 
+            width: 300px; 
+            border-radius: 50%;
+           border-color: #64FFDA;
+        }
+        .hero h1 {
+            font-size: 3em;
+            z-index: 1;
+        }
+        .hero p {
+            font-size: 1.5em;
+            z-index: 1; 
+        }
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items:  flex-start;
+            background-color: #112240;
+            padding: 50px;
+            padding-left: 20px;
+        }
+        .hero h1 {
+            font-size: 3em;
+        }
+        .hero p {
+            font-size: 1.5em;
+        }
+        
+        
+        
         section {
-            margin: 20px;
-            padding: 20px;
-            background-color: #1C2B3A;
-            border-radius: 10px;
-            transition: transform 0.3s, filter 0.3s;
+            display: inline-block;
+    width: 100%;
+    margin: 10px;
+    padding: 10px;
+    background-color: #1C2B3A;
+    border-radius: 10px;
+    transition: transform 0.3s, background-color 0.3s;
+    text-align: center;
+            
         }
         section:hover {
             transform: scale(1.02);
-        }
-        .blurred {
-            filter: blur(2px);
-        }
-        h2 {
-            transition: transform 0.3s ease-in-out;
-        }
-        section:hover h2 {
-            transform: scale(1.2);
-        }
-        a {
-            color: #64FFDA;
-            text-decoration: none;
-        }
-        .gif {
-            width: 100%;
-            max-width: 400px;
-            margin-top: 20px;
+    background-color: #1C2B3A;
+    color: rgb(255, 255, 255);
         }
         .formulario input, .formulario textarea {
             width: 100%;
             padding: 10px;
             margin: 5px 0;
-            border: none;
+            border: 2px solid #64FFDA;
             border-radius: 5px;
+            background-color: #0A192F;
+            color: white;
         }
         .formulario button {
             background-color: #64FFDA;
@@ -58,50 +108,192 @@
             padding: 10px;
             border-radius: 5px;
             cursor: pointer;
+            transition: background-color 0.3s;
         }
-        .formulario button:hover {
-            background-color: #52e0c4;
+        .formulario button:active {
+            background-color: green;
         }
-        .rocket {
-            display: none;
-            font-size: 30px;
-            margin-top: 10px;
-            animation: launch 1s ease-out;
+        #Meusprojetos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 200px; 
+    height: 100px;
+    padding: 15px;
+    background-color: #1C2B3A;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+}
+
+#Meusprojetos:hover {
+    background-color: #64FFDA;
+    color: black;
+}
+
+.botao {
+    display: inline-block;
+    margin: 10px;
+    padding:  20px;
+    background-color: #64FFDA;
+    color: black;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    transition:transform 0.5s, background-color 0.3s;
+}
+
+.botao:hover {
+    background-color: #64FFDA; 
+    color: black;
+    transform: scale(1.1);
+}
+
+        #curriculo a {
+    display: inline-block;
+    margin: 10px;
+    padding:  20px;
+    background-color: #64FFDA;
+    color: black;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    transition:transform 0.5s, background-color 0.3s;
+}
+
+#curriculo a:hover {
+    background-color: #64FFDA; 
+    color: black;
+    transform: scale(1.1);
+}
+        
+        .habilidade {
+            display: inline-block;
+            margin: 10px;
+            padding: 15px;
+            background-color: #112240;
+            border-radius: 10px;
+            transition: transform 0.3s, background-color 0.3s;
         }
-        @keyframes launch {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(-50px); opacity: 0; }
+        .habilidade:hover {
+            transform: scale(1.1);
+            background-color: #64FFDA;
+            color: black;
         }
+        
+        #curriculo {
+    display: inline-block;
+    width: 100%;
+    margin: 10px;
+    padding: 18px;
+    background-color: #1C2B3A;
+    border-radius: 10px;
+    transition: transform 0.3s, background-color 0.3s;
+    text-align: center;
+        }
+#curriculo:hover {
+    transform: scale(1.1);
+    background-color: #1C2B3A;
+    color: rgb(255, 255, 255);
+}
+
+ #redes {
+    display: inline-block;
+    width: 1200px;
+    margin: 10px;
+    padding: 18px;
+    background-color: #1C2B3A;
+    border-radius: 10px;
+    transition: transform 0.3s, background-color 0.3s;
+    text-align: center;
+}
+#redes:hover {
+    transform: scale(1.1);
+    background-color: #1C2B3A;
+    color: rgb(255, 255, 255);
+}
+
+ 
+.linkedin {
+    display: inline-block;
+    margin: 10px;
+    padding:  20px;
+    background-color: #64FFDA;
+    color: black;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    transition:transform 0.5s, background-color 0.3s;
+}
+
+.linkedin:hover {
+    background-color: #64FFDA; 
+    color: black;
+    transform: scale(1.1);
+}
+.GitHub {
+    display: inline-block;
+    margin: 10px;
+    padding:  20px;
+    background-color: #64FFDA;
+    color: black;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    transition:transform 0.5s, background-color 0.3s;
+}
+
+.GitHub:hover {
+    background-color: #64FFDA; 
+    color: black;
+    transform: scale(1.1);
+}
+
+
+        
     </style>
 </head>
 <body>
-    <header>
-        <h1>Bruno Henrique</h1>
-        <p>Seja bem vindo(a) ao meu site pessoal!</p>
-    </header>
-    
-    <section onmouseover="destacar(this)" onmouseout="restaurar()">
-        <h2>Sobre Mim</h2>
-        <p>Sou um profissional versátil, com experiência em diversas áreas, incluindo tecnologia da informação, segurança e gestão. Ao longo da minha trajetória, desempenhei funções como conexão de redes com e sem fio, instalação de programas, manutenção de redes, recebimento e distribuição de materiais, controle de estoque, treinamentos de jovens, controle de distúrbios, segurança de autoridades, segurança pública e patrimonial, entre outras.
+    <nav class="navbar">
+        <a href="#sobre">Sobre Mim</a>
+        <a href="#Meus projetos">Meus Projetos</a>
+        <a href="#habilidades">Habilidades</a>
+        <a href="#curriculo">Currículo</a>
+        <a href="#contato">Contato</a>
+        <a href="#redes">Redes Sociais</a>
+    </nav>
 
-            Atualmente, sou tecnólogo em Análise e Desenvolvimento de Sistemas, aprofundando meus conhecimentos em desenvolvimento web, análise de dados e programação. Possuo certificações em diversas tecnologias, como HTML, CSS, JavaScript, Python, SQL, React e Power BI, além de experiência com metodologias ágeis e versionamento de código.
-            
-            Minhas principais habilidades incluem liderança, trabalho em equipe, tomada de decisões, boa comunicação, inteligência emocional e raciocínio lógico. Com essa combinação de conhecimentos técnicos e habilidades interpessoais, busco sempre soluções eficientes e inovadoras para desafios do dia a dia.
-            
-            Estou em constante aprendizado e sempre aberto a novas oportunidades para crescer profissionalmente e contribuir com meu conhecimento.</p>
+    <div class="hero">
+        <img src="Foto do Bruno.jpeg" alt="Imagem de Bruno Henrique">
+        <h1>Olá! Eu sou o </h1>
+        <h1 class="titulo">Bruno Modesto</h1>
+        <p>Seja bem-vindo(a) ao meu site pessoal!</p>
+    </div>
+    
+    <section id="sobre">
+        <h2>Sobre Mim</h2>
+        <p>Tecnólogo em Análise e Desenvolvimento de Sistemas, com certificações em HTML, CSS, JavaScript, Python, SQL, React e Power BI, além de experiência com metodologias ágeis e versionamento de código. Habilidades em liderança, trabalho em equipe, comunicação e raciocínio lógico, buscando sempre soluções inovadoras e aprendizado contínuo. Profissional versátil com experiência em TI,atuando em configuração e manutenção de redes, instalação de softwares e suporte técnico.</p>
+    </section>
+    <section id="Meus Projetos">
+        <h2>Meus Projetos</h2>
+        <a href="https://bruno-modesto01.github.io/Landing-page/" class="botao">Landing Page</a>
     </section>
     
-    <section onmouseover="destacar(this)" onmouseout="restaurar()">
-        <h2>Portfólio</h2>
-        <p>Em breve aqui estarão meus projetos.</p>
-    </section>
     
-    <section onmouseover="destacar(this)" onmouseout="restaurar()">
+    
+    
+    <section id="habilidades">
+        <h2>Habilidades</h2>
+        <div class="habilidade">HTML</div>
+        <div class="habilidade">CSS</div>
+        <div class="habilidade">JavaScript</div>
+    </section>
+    <section id="curriculo">
         <h2>Currículo</h2>
-        <a href="Curriculo Bruno Henrique.pdf" download>Baixar Currículo</a>
+        <a href="Bruno Currículo Dev.pdf" download>Baixar Currículo</a>
     </section>
     
-    <section onmouseover="destacar(this)" onmouseout="restaurar()">
+    <section id="contato">
         <h2>Contato</h2>
         <form class="formulario" action="https://formsubmit.co/bruno.viips01@gmail.com" method="POST">
             <input type="text" name="name" placeholder="Seu Nome" required>
@@ -109,45 +301,15 @@
             <textarea name="message" placeholder="Sua Mensagem" required></textarea>
             <button type="submit">Enviar</button>
         </form>
-        
-        </form>
         <p id="mensagem-confirmacao" style="display: none; color: #64FFDA;">Mensagem enviada com sucesso!</p>
-        <div id="foguete" class="rocket">🚀</div>
+        
     </section>
     
-    <section onmouseover="destacar(this)" onmouseout="restaurar()">
+    <section id="redes">
         <h2>Redes Sociais</h2>
-        <a href="https://www.linkedin.com/in/bruno-h-040373106/">LinkedIn</a> | 
-        <a href="https://github.com/Bruno-Modesto01">GitHub</a>  
-        
+        <a href="https://www.linkedin.com/in/bruno-h-040373106/" class="linkedin" > LinkedIn</a> | 
+        <a href="https://github.com/Bruno-Modesto01" class="GitHub" >GitHub</a>  
     </section>
-    
-    <script>
-        function enviarMensagem(event) {
-            event.preventDefault();
-            document.getElementById('mensagem-confirmacao').style.display = 'block';
-            let foguete = document.getElementById('foguete');
-            foguete.style.display = 'block';
-            setTimeout(() => {
-                foguete.style.display = 'none';
-                document.getElementById('mensagem-confirmacao').style.display = 'none';
-            }, 1000);
-            return false;
-        }
-        
-        function destacar(elemento) {
-            document.querySelectorAll('section').forEach(sec => {
-                if (sec !== elemento) {
-                    sec.classList.add('blurred');
-                }
-            });
-        }
-        
-        function restaurar() {
-            document.querySelectorAll('section').forEach(sec => {
-                sec.classList.remove('blurred');
-            });
-        }
-    </script>
 </body>
 </html>
+
